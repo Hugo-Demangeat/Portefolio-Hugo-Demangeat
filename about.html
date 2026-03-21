@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos - Portfolio BTS SIO</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html" class="active">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="veille.html">Veille</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn-outline" id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>À propos</h1>
+      <p>Étudiant BTS SIO SLAM, je suis passionné par le full-stack, la cybersécurité et l'innovation IT.</p>
+      <div class="cards-section">
+        <article class="card">
+          <h3>2+</h3>
+          <p>ans d'études</p>
+        </article>
+        <article class="card">
+          <h3>5+</h3>
+          <p>projets</p>
+        </article>
+        <article class="card">
+          <h3>4</h3>
+          <p>langages</p>
+        </article>
+      </div>
+
+      <h2>Pourquoi moi ?</h2>
+      <p class="lead">Passionné par l'informatique et l'innovation, je développe des solutions robustes et créatives pour répondre aux besoins métier.</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Mon histoire</h3>
+          <p>2022-2024 : Bac Scientifique Math-Physique, option Math-Expert.
+          2024-2026 : BTS SIO SLAM, création d'applis et projets d'entreprise.
+          2026+ : objectif licence pro ou intégrer un projet dev ambitieux.</p>
+        </div>
+        <div class="about-card">
+          <h3>Compétences</h3>
+          <ul>
+            <li>HTML/CSS, JavaScript, PHP, Python, SQL</li>
+            <li>Laravel, React, Vue, Docker, Git</li>
+            <li>API REST, MVC, sécurité, performance</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Langues</h3>
+          <p>🇫🇷 Français (natif), 🇬🇧 Anglais B2/C1</p>
+        </div>
+      </div>
+
+      <h2>Mes points forts</h2>
+      <div class="carousel-about" id="aboutCarousel">
+        <button class="carousel-btn prev" data-direction="prev">←</button>
+        <div class="carousel-track">
+          <article class="project-card">
+            <h3>Langages & Frameworks</h3>
+            <p>Python, JavaScript, Java, PHP, HTML/CSS, Laravel</p>
+          </article>
+          <article class="project-card">
+            <h3>Outils & méthodes</h3>
+            <p>Git/GitHub, Docker, Linux, SQL, agile, tests unitaires</p>
+          </article>
+          <article class="project-card">
+            <h3>Objectifs</h3>
+            <p>Devenir développeur Web Full-Stack & spécialiste cybersécurité.</p>
+          </article>
+        </div>
+        <button class="carousel-btn next" data-direction="next">→</button>
+      </div>
+
+      <a href="projects.html" class="btn btn-gradient">Voir mes projets</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 © TON NOM — BTS SIO SLAM — Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
