@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -16,44 +16,138 @@
         <li><a href="projects.html" class="active">Projets</a></li>
         <li><a href="veille.html">Veille</a></li>
         <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="autres.html">Autres</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn-outline" id="themeToggle">🌙</button>
+      
     </nav>
   </header>
 
   <main class="container">
     <section class="section">
-      <h1>Projets</h1>
-      <p>Exemples de projets développés durant mes études et stages.</p>
-      <div class="projects-grid">
-        <article class="project-card fade-in-up">
-          <img src="https://via.placeholder.com/480x240?text=Jeu+Python" alt="Jeu Python" />
-          <h3>Jeu Python</h3>
-          <p>Jeu en terminal avec structure POO, menus, scores et sauvegarde locale.</p>
-          <p>Tech : Python, POO</p>
-          <a href="https://github.com/ton-profil/jeu-python" class="btn btn-outline" target="_blank">Voir le repo</a>
-        </article>
-        <article class="project-card fade-in-up">
-          <img src="https://via.placeholder.com/480x240?text=Site+E-commerce" alt="Site E-commerce" />
-          <h3>Site E-commerce</h3>
-          <p>Site PrestaShop configuré + hébergement, gestion catalogue et paiement.</p>
-          <p>Tech : PHP, PrestaShop</p>
-          <a href="https://github.com/ton-profil/site-ecommerce" class="btn btn-outline" target="_blank">Voir le repo</a>
-        </article>
-        <article class="project-card fade-in-up">
-          <img src="https://via.placeholder.com/480x240?text=EventHub" alt="EventHub" />
-          <h3>EventHub</h3>
-          <p>Application de gestion d’événements (CRUD, authentification, statuts).</p>
-          <p>Tech : Laravel, PHP, SQL</p>
-          <a href="https://github.com/ton-profil/eventhub" class="btn btn-outline" target="_blank">Voir le repo</a>
-        </article>
+      <div class="section-header">
+        <h1 class="typewriter">Mes projets</h1>
+        <p>// DÉVELOPPEMENTS PERSONNELS & ACADÉMIQUES</p>
       </div>
+
+      <!-- STATISTICS BANNER -->
+      <div class="stats-banner reveal">
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">projets réalisés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">langages principaux</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">versionning Git</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">frameworks</div>
+        </div>
+      </div>
+
+      <!-- PROJECT CATEGORIES -->
+      
+      <!-- Web Development -->
+      <div class="cert-category reveal">
+        <div class="category-header">
+          <span class="category-icon">🌐</span>
+          <h2>Développement Web</h2>
+          <span class="category-count">3 projets</span>
+        </div>
+        <div class="certs-row">
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/300x200?text=Jeu+Python" alt="Jeu Python">
+            </div>
+            <div class="cert-info">
+              <h3>Jeu Python</h3>
+              <p class="cert-issuer">Étudiant, BTS SIO SLAM</p>
+              <p class="cert-description">Jeu en terminal avec structure POO, menus, scores et sauvegarde locale. Architecture professionnelle avec classes et héritage.</p>
+              <div class="cert-skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">POO</span>
+                <span class="skill-tag">Architecture</span>
+              </div>
+              <a href="https://github.com/ton-profil/jeu-python" target="_blank" class="link-arrow">Voir le repo →</a>
+            </div>
+          </div>
+
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/300x200?text=Site+E-commerce" alt="Site E-commerce">
+            </div>
+            <div class="cert-info">
+              <h3>Site E-commerce</h3>
+              <p class="cert-issuer">Projet professionnel, Stage 1A</p>
+              <p class="cert-description">Site e-commerce configuré avec PrestaShop, hébergement, gestion catalogue produits et intégration paiement sécurisé.</p>
+              <div class="cert-skills">
+                <span class="skill-tag">PrestaShop</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">E-commerce</span>
+              </div>
+              <a href="https://github.com/ton-profil/site-ecommerce" target="_blank" class="link-arrow">Voir le repo →</a>
+            </div>
+          </div>
+
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/300x200?text=EventHub" alt="EventHub App">
+            </div>
+            <div class="cert-info">
+              <h3>EventHub</h3>
+              <p class="cert-issuer">Application full-stack, BTS SIO</p>
+              <p class="cert-description">Application de gestion d'événements avec CRUD complet, authentification utilisateur, statuts événements et système de notifications.</p>
+              <div class="cert-skills">
+                <span class="skill-tag">Laravel</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">SQL</span>
+              </div>
+              <a href="https://github.com/ton-profil/eventhub" target="_blank" class="link-arrow">Voir le repo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Development -->
+      <div class="cert-category reveal">
+        <div class="category-header">
+          <span class="category-icon">⚙️</span>
+          <h2>Développement Backend</h2>
+          <span class="category-count">1 projet</span>
+        </div>
+        <div class="certs-row">
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/300x200?text=API+REST" alt="API REST">
+            </div>
+            <div class="cert-info">
+              <h3>API REST - Gestion Produits</h3>
+              <p class="cert-issuer">Projet académique, BTS SIO</p>
+              <p class="cert-description">Architecture microservices avec Node.js, endpoints RESTful complets, authentification JWT et base de données MongoDB.</p>
+              <div class="cert-skills">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">REST API</span>
+                <span class="skill-tag">MongoDB</span>
+              </div>
+              <a href="https://github.com/ton-profil/api-rest" target="_blank" class="link-arrow">Voir le repo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- All Projects Button -->
+      <a href="https://github.com/ton-profil" target="_blank" class="btn btn-gradient" style="margin-top: 2rem; display: inline-block;">Voir tous les projets →</a>
+
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>2026 © TON NOM — BTS SIO SLAM — Tous droits réservés</p>
+    <p>2026 © Hugo Demangeat — BTS SIO SLAM — Tous droits réservés</p>
   </footer>
 
   <script src="js/script.js"></script>

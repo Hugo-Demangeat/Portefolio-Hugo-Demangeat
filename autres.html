@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autres - Portfolio BTS SIO</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="veille.html">Veille</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="autres.html" class="active">Autres</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="typewriter">Autres Ressources</h1>
+        <p>// SYNTHÈSES & DOCUMENTS</p>
+      </div>
+
+      <!-- TABLEAU DE SYNTHÈSE COMPÉTENCES BTS -->
+      <div class="tableau-container reveal">
+        <div class="tableau-header">
+          <h2>Compétences BTS SIO SLAM</h2>
+          <a href="#" class="btn btn-gradient" id="downloadBtn">⬇️ Télécharger</a>
+        </div>
+        
+        <div class="tableau-wrapper">
+          <table class="data-table" id="competencesTable">
+            <thead>
+              <tr>
+                <th>Bloc de compétence</th>
+                <th>Compétence</th>
+                <th>Niveau</th>
+                <th>Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="4" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                  📊 Tableau de synthèse à venir...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tableau-info">
+          <p>ℹ️ Ce tableau récapitulatif des compétences acquises lors du BTS SIO option SLAM sera complété au fur et à mesure.</p>
+        </div>
+      </div>
+
+      <!-- AUTRES SECTIONS À VENIR -->
+      <div class="autres-section reveal" style="margin-top: 3rem;">
+        <div class="section-divider">
+          <span>+ Contenus à ajouter</span>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); margin-top: 2rem;">
+          Cette page est prête à accumuler d'autres ressources et synthèses au fur et à mesure de l'évolution du portfolio.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 © Hugo Demangeat — BTS SIO SLAM — Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Fonction pour générer et télécharger un fichier
+    document.getElementById('downloadBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const table = document.getElementById('competencesTable');
+      const rows = [];
+      
+      // Récupérer les lignes du tableau
+      table.querySelectorAll('tr').forEach(tr => {
+        const row = [];
+        tr.querySelectorAll('th, td').forEach(cell => {
+          row.push(cell.textContent.trim());
+        });
+        rows.push(row.join('\t'));
+      });
+      
+      // Créer un blob CSV
+      const csv = rows.join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', `competences_bts_${new Date().toISOString().split('T')[0]}.csv`);
+      link.style.visibility = 'hidden';
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>

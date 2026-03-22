@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -16,28 +16,212 @@
         <li><a href="projects.html">Projets</a></li>
         <li><a href="veille.html">Veille</a></li>
         <li><a href="certifications.html" class="active">Certifications</a></li>
+        <li><a href="autres.html">Autres</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn-outline" id="themeToggle">🌙</button>
+      
     </nav>
   </header>
 
   <main class="container">
     <section class="section">
-      <h1>Certifications</h1>
-      <ul class="cert-list">
-        <li><strong>PIX</strong> - Compétences numériques validées</li>
-        <li><strong>Cisco CCNA</strong> - Réseaux et sécurité
-        </li>
-        <li><strong>CNIL Atelier RGPD</strong> - Protection des données personnelles</li>
-        <li><strong>OpenClassrooms (HTML/CSS/JS/PHP)</strong> - Création web moderne</li>
-      </ul>
-      <p>Certifications incluant PIX, Cisco CCNA et CNIL Atelier RGPD.</p>
+      <div class="section-header">
+        <h1 class="typewriter">Mes certifications</h1>
+        <p>// PARCOURS DE FORMATION</p>
+      </div>
+
+      <!-- STATISTICS BANNER -->
+      <div class="stats-banner reveal">
+        <div class="stat-item">
+          <div class="stat-number">8</div>
+          <div class="stat-label">formations au total</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">certifications Cisco</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">modules CNIL</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">certification PIX</div>
+        </div>
+      </div>
+
+      <!-- CATEGORY FILTERS -->
+      <div class="category-filters reveal">
+        <button class="filter-btn active" data-filter="all">Tout afficher</button>
+        <button class="filter-btn" data-filter="security">🔒 Réseaux & Infrastructure</button>
+        <button class="filter-btn" data-filter="dev">💻 Développement</button>
+        <button class="filter-btn" data-filter="data">📊 Data & IA</button>
+        <button class="filter-btn" data-filter="pix">⭐ PIX</button>
+      </div>
+
+      <!-- CERTIFICATION CATEGORIES -->
+      
+      <!-- PIX Section -->
+      <div class="cert-category reveal" data-category="pix">
+        <div class="category-header">
+          <span class="category-icon">⭐</span>
+          <h2>Certification PIX</h2>
+          <span class="category-count">1 certification</span>
+        </div>
+        <div class="certs-row">
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="ressources/Certification/Certification PIX/Certification PIX jean Lurcat.png" alt="Certification PIX" loading="lazy">
+            </div>
+            <div class="cert-info">
+              <h3>Certification PIX</h3>
+              <p class="cert-issuer">LPO Jean Lurçat, Perpignan</p>
+              <p class="cert-description">Certification nationale des compétences numériques — évaluation de 5 domaines : informations, communication, création de contenu, protection et environnement numérique.</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B1 — Usages numériques professionnels</span>
+                <span class="skill-tag">B3 — Sécurité et protection des données</span>
+              </div>
+              <a href="ressources/Certification/Certification PIX/Certification PIX jean Lurcat.png" target="_blank" class="link-arrow">Ouvrir le certificat →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Section -->
+      <div class="cert-category reveal" data-category="security">
+        <div class="category-header">
+          <span class="category-icon">🔒</span>
+          <h2>Réseaux & Infrastructure</h2>
+          <span class="category-count">3 certifications</span>
+        </div>
+        <div class="certs-row">
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/200x200?text=Cisco+Network" alt="Cisco Networking">
+            </div>
+            <div class="cert-info">
+              <h3>Computer Hardware Basics</h3>
+              <p class="cert-issuer">Cisco Networking Academy</p>
+              <p class="cert-status-badge obtenue">✓ Obtenue</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B1 — Mise à disposition de services informatiques</span>
+                <span class="skill-tag">B3 — Sécurité des équipements</span>
+              </div>
+              <a href="#" class="link-arrow">Voir sur Credly →</a>
+            </div>
+          </div>
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/200x200?text=Cisco+IoT" alt="Cisco IoT">
+            </div>
+            <div class="cert-info">
+              <h3>Introduction to IoT</h3>
+              <p class="cert-issuer">Cisco Networking Academy</p>
+              <p class="cert-status-badge obtenue">✓ Obtenue</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B1 — Services et infrastructure numérique</span>
+                <span class="skill-tag">B3 — Sécurité des objets connectés</span>
+              </div>
+              <a href="#" class="link-arrow">Voir sur Credly →</a>
+            </div>
+          </div>
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/200x200?text=Cisco+Network" alt="Cisco Networking">
+            </div>
+            <div class="cert-info">
+              <h3>Networking Basics</h3>
+              <p class="cert-issuer">Cisco Networking Academy</p>
+              <p class="cert-status-badge obtenue">✓ Obtenue</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B1 — Infrastructure et services réseau</span>
+                <span class="skill-tag">B3 — Sécurité des échanges réseau</span>
+              </div>
+              <a href="#" class="link-arrow">Voir sur Credly →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development Section -->
+      <div class="cert-category reveal" data-category="dev">
+        <div class="category-header">
+          <span class="category-icon">💻</span>
+          <h2>Développement</h2>
+          <span class="category-count">2 certifications</span>
+        </div>
+        <div class="certs-row">
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/200x200?text=OpenClassrooms+Git" alt="Git & GitHub">
+            </div>
+            <div class="cert-info">
+              <h3>Gérez du code avec Git et GitHub</h3>
+              <p class="cert-issuer">OpenClassrooms</p>
+              <p class="cert-status-badge obtenue">✓ Obtenue</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B2 — Conception et développement d'applications</span>
+              </div>
+              <a href="#" class="link-arrow">Voir le certificat →</a>
+            </div>
+          </div>
+          <div class="cert-card-large">
+            <div class="cert-image-wrapper">
+              <img src="https://via.placeholder.com/200x200?text=OpenClassrooms+Python" alt="Python">
+            </div>
+            <div class="cert-info">
+              <h3>Apprenez les bases du langage Python</h3>
+              <p class="cert-issuer">OpenClassrooms</p>
+              <p class="cert-status-badge encours">⏱ En cours</p>
+              <div class="cert-skills">
+                <span class="skill-tag">B2 — Conception et développement</span>
+              </div>
+              <a href="#" class="link-arrow">Voir le certificat →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RGPD/Security Section -->
+      <div class="cert-category reveal" data-category="security">
+        <div class="category-header">
+          <span class="category-icon">🛡️</span>
+          <h2>Cybersécurité & Conformité</h2>
+          <span class="category-count">6 modules CNIL</span>
+        </div>
+        <div class="cert-rgpd-modules">
+          <div class="rgpd-module reveal">
+            <h4>🔗 Le RGPD et ses notions clés</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module1_CNIL_LE RGPD ET SES NOTIONS CLÉS.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+          <div class="rgpd-module reveal">
+            <h4>🔗 Les principes de la protection des données</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module2_CNIL_LES PRINCIPES DE LA PROTECTION DES DONNÉES.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+          <div class="rgpd-module reveal">
+            <h4>🔗 Les responsabilités des acteurs</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module3_CNIL_LES RESPONSABILITÉS DES ACTEURS.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+          <div class="rgpd-module reveal">
+            <h4>🔗 Le DPO et les outils de la conformité</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module4_CNIL_LE DPO ET LES OUTILS DE LA CONFORMITÉ.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+          <div class="rgpd-module reveal">
+            <h4>🔗 Les collectivités territoriales</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module5_CNIL_LES COLLECTIVITÉS TERRITORIALES.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+          <div class="rgpd-module reveal">
+            <h4>🔗 Travail et données personnelles</h4>
+            <a href="ressources/Certification/Certif Atelier RGPD/Certificat_RGPD_Module6_CNIL_TRAVAIL ET DONNÉES PERSONNELLES.pdf" target="_blank" class="link-arrow">📄 Voir le certificat</a>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>2026 © TON NOM — BTS SIO SLAM — Tous droits réservés</p>
+    <p>2026 © Hugo Demangeat — BTS SIO SLAM — Tous droits réservés</p>
   </footer>
 
   <script src="js/script.js"></script>
