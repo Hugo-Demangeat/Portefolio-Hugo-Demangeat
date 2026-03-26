@@ -2,7 +2,131 @@
   /* TYPEWRITER EFFECT FOR H1 & H2 */
   const h1 = document.querySelector('h1');
   const h2Elements = document.querySelectorAll(':not(.site-header) > h2, .section > h2');
-  
+
+  // Interactiv background layers
+  function setupBackgroundLayers() {
+    // Le canvas matrix est conservé dans le code pour future utilisation,
+    // mais n'est pas créé dans le DOM tant qu'on ne l'active pas explicitement.
+    if (!document.getElementById('particles')) {
+      const particlesLayer = document.createElement('div');
+      particlesLayer.id = 'particles';
+      document.body.prepend(particlesLayer);
+    }
+  }
+
+  function initMatrixEffect() {
+    // Matrix fallback : gardé dans le fichier mais désactivé par défaut
+    const canvas = document.getElementById('matrix');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const letters = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const fontSize = 14;
+    let columns = 0;
+    let drops = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      columns = Math.floor(canvas.width / fontSize);
+      drops = Array.from({ length: columns }).fill(1);
+    }
+
+    function draw() {
+      if (!ctx) return;
+      ctx.fillStyle = 'rgba(10, 15, 31, 0.06)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00aaff';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, i) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      });
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    return setInterval(draw, 33);
+  }
+
+  function loadTsParticles() {
+    return new Promise((resolve, reject) => {
+      if (window.tsParticles) {
+        resolve();
+        return;
+      }
+
+      const existing = document.querySelector('script[src*="tsparticles"]');
+      if (existing) {
+        existing.addEventListener('load', () => resolve());
+        existing.addEventListener('error', () => reject(new Error('Failed loading tsParticles')));
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js';
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed loading tsParticles'));
+      document.head.appendChild(script);
+    });
+  }
+
+  function initParticleNetwork() {
+    if (!window.tsParticles || !document.getElementById('particles')) return;
+
+    window.tsParticles.load('particles', {
+      background: { color: 'transparent' },
+      particles: {
+        number: { value: 80, density: { enable: true, area: 900 } },
+        color: { value: '#00cfff' },       // cyan doux
+        shape: { type: 'circle' },
+        opacity: { value: 0.4 },           // moins visible
+        size: { value: 2.2, random: true },
+        links: {
+          enable: true,
+          distance: 150,
+          color: '#00cfff',
+          opacity: 0.25,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 0.5,
+          direction: 'none',
+          random: false,
+          straight: false,
+          outModes: { default: 'bounce' }
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: 'grab' },
+          onClick: { enable: true, mode: ['repulse', 'push'] },
+          resize: true
+        },
+        modes: {
+          grab: { distance: 160, links: { opacity: 1 } },
+          repulse: { distance: 220, duration: 0.65 },
+          push: { quantity: 4 }
+        }
+      },
+      detectRetina: true
+    });
+  }
+
+  setupBackgroundLayers();
+  // Matrix effect désactivé pour l'instant (le code reste dans le fichier)
+  // const matrixInterval = initMatrixEffect();
+  loadTsParticles().then(initParticleNetwork).catch((err) => console.warn(err));
+
   if (h1) {
     const originalText = h1.textContent;
     h1.textContent = '';

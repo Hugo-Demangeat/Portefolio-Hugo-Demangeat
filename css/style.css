@@ -4,17 +4,35 @@
   --bg-dark: #0a0e27;
   --bg-darker: #050814;
   --bg-card: #0f1429;
-  --cyan: #00d4ff;
+  
+  --cyan: #00d4ff;          /* accent principal */
   --cyan-muted: #0099cc;
-  --cyan-dark: #0066aa;
-  --violet: #a855f7;
-  --violet-light: #c084fc;
+  --violet: #a855f7;        /* accent secondaire */
   --violet-dark: #9333ea;
-  --blue-accent: #3b82f6;
-  --text: #ffffff;
-  --text-muted: #a0aec0;
+  
+  --text: #f5f5f5;          /* texte principal plus blanc */
+  --text-muted: #d1d5db;    /* texte secondaire légèrement gris */
+  
+  --highlight: #ff9f43;     /* nouvelle couleur accent subtile (orange doux) */
+  
   --border: #1e293b;
   --border-light: #334155;
+
+  /* Typography variables */
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.3rem;
+  --font-size-h3: 1.3rem;
+  --font-size-p: 1.1rem;
+  --line-height-h1: 1.3;
+  --line-height-h2: 1.4;
+  --line-height-p: 1.7;
+
+  /* Spacing variables */
+  --card-padding: 2.5rem;
+  --card-margin: 1.5rem;
+  --grid-gap: 2.5rem;
+  --btn-padding-y: 1rem;
+  --btn-padding-x: 2.2rem;
 }
 
 * { box-sizing: border-box; }
@@ -28,13 +46,40 @@ body {
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
   color: var(--text);
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 50%, var(--bg-dark) 100%);
-  background-attachment: fixed;
+  background: linear-gradient(135deg, 
+    #0a0f1f,  /* bleu très sombre - profondeur */
+    #101f3c,  /* bleu foncé subtil */
+    #1a2a47,  /* bleu nuit */
+    #0f2233,  /* bleu intermédiaire */
+    #002d40,  /* bleu-vert très discret */
+    #1b1b3c,  /* violet très sombre */
+    #003366,  /* bleu électrique */
+    #0a0f1f   /* retour bleu très sombre pour boucle douce */
+);
   min-height: 100vh;
   line-height: 1.6;
   letter-spacing: 0.5px;
   position: relative;
   overflow-x: hidden;
+}
+
+#matrix,
+#particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#matrix {
+  z-index: -2;
+}
+
+#particles {
+  z-index: -1;
+  background-color: rgba(10, 15, 31, 0.3);
+  filter: blur(2px);
 }
 
 /* SCROLLBAR STYLING */
@@ -57,15 +102,17 @@ body {
 
 /* HEADER & NAVBAR - SEAMLESS */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 99;
-  background: rgba(10, 14, 39, 0.7);
-  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 1.2rem 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 1rem 0;
   margin: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -159,7 +206,7 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 6.5rem 2rem 4rem;
   position: relative;
   z-index: 1;
 }
@@ -286,11 +333,11 @@ body {
 
 /* TYPOGRAPHY */
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: var(--font-size-h1);
   margin: 0 0 1.5rem 0;
   color: var(--text);
   letter-spacing: 2px;
-  line-height: 1.4;
+  line-height: var(--line-height-h1);
   font-weight: 700;
   background: linear-gradient(90deg, var(--text) 0%, var(--cyan) 25%, var(--violet) 50%, var(--cyan) 75%, var(--text) 100%);
   background-size: 200% auto;
@@ -299,11 +346,12 @@ h1 {
   background-clip: text;
   animation: colorShift 8s ease infinite;
   position: relative;
+  text-shadow: 0 0 2px rgba(0, 212, 255, 0.1); /* glow très discret */
 }
 
 h1 + h2 {
   color: var(--cyan);
-  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-size: var(--font-size-h2);
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
@@ -313,7 +361,7 @@ h1 + h2 {
 }
 
 h2 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: var(--font-size-h2);
   margin: 2.5rem 0 1.5rem 0;
   color: var(--text);
   letter-spacing: 1px;
@@ -325,18 +373,21 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: var(--font-size-h3);
   margin: 1.5rem 0 1rem 0;
   color: var(--cyan);
   letter-spacing: 0.5px;
   font-weight: 600;
   transition: color 0.3s ease;
+  text-shadow: 0 0 1px rgba(0, 212, 255, 0.05); /* très léger */
 }
 
 p, li {
-  color: var(--text-muted);
+  color: var(--text); /* plus blanc */
   margin-bottom: 1.5rem;
-  line-height: 1.8;
+  line-height: var(--line-height-p);
+  font-size: var(--font-size-p);
+  text-shadow: none;  /* glow supprimé */
 }
 
 a {
@@ -362,7 +413,7 @@ a:focus {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.8rem;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   border: 1px solid var(--border-light);
   background: transparent;
   color: var(--text);
@@ -428,6 +479,17 @@ a:focus {
   color: var(--cyan);
   border-color: var(--cyan);
   background: rgba(0, 212, 255, 0.1);
+}
+
+.btn-highlight {
+  background: var(--highlight);
+  color: var(--bg-dark);
+  border: 1px solid rgba(255, 159, 67, 0.6);
+}
+
+.btn-highlight:hover {
+  background: #ffb966; /* un peu plus clair au hover */
+  box-shadow: 0 4px 12px rgba(255, 159, 67, 0.2);
 }
 
 
@@ -507,15 +569,17 @@ a:focus {
 .cards-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin: 2rem 0;
 }
 
 .card, .about-card, .contact-card, .info-card, .cert-card {
-  background: linear-gradient(135deg, rgba(15, 20, 41, 0.6) 0%, rgba(10, 14, 39, 0.6) 100%);
+  background: rgba(15, 20, 41, 0.85);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 4px;
-  padding: 2rem;
+  padding: var(--card-padding);
+  margin: var(--card-margin) 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -548,7 +612,7 @@ a:focus {
 
 .card:hover, .about-card:hover, .contact-card:hover, .info-card:hover, .cert-card:hover {
   border-color: var(--cyan);
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.03) 100%);
+  background: rgba(0, 212, 255, 0.05); /* léger survol cyan */
   box-shadow: 0 4px 16px rgba(0, 212, 255, 0.15), inset 0 1px 1px rgba(0, 212, 255, 0.2);
   transform: translateY(-2px);
 }
@@ -575,7 +639,7 @@ a:focus {
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin: 2rem 0;
 }
 
@@ -583,7 +647,7 @@ a:focus {
   background: rgba(15, 20, 41, 0.6);
   border: 1px solid var(--border);
   border-radius: 3px;
-  padding: 2rem;
+  padding: var(--card-padding);
 }
 
 .about-card h3 {
@@ -694,7 +758,7 @@ a:focus {
   background: linear-gradient(135deg, rgba(15, 20, 41, 0.6) 0%, rgba(10, 14, 39, 0.6) 100%);
   border: 1px solid rgba(0, 212, 255, 0.15);
   border-radius: 4px;
-  padding: 2rem;
+  padding: var(--card-padding);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   position: relative;
@@ -750,7 +814,7 @@ a:focus {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin: 2rem 0;
 }
 
@@ -762,7 +826,7 @@ a:focus {
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin: 2rem 0;
 }
 
@@ -792,7 +856,7 @@ a:focus {
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin: 2rem 0;
 }
 
@@ -800,7 +864,7 @@ a:focus {
   background: rgba(15, 20, 41, 0.6);
   border: 1px solid var(--border);
   border-radius: 3px;
-  padding: 2rem;
+  padding: var(--card-padding);
 }
 
 .cert-card h3 {
@@ -1032,7 +1096,7 @@ a:focus {
 .certs-row {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: var(--grid-gap);
   margin-bottom: 2rem;
 }
 
@@ -1045,6 +1109,7 @@ a:focus {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  padding: var(--card-padding);
 }
 
 .cert-card-large:hover {
@@ -1076,7 +1141,6 @@ a:focus {
 }
 
 .cert-info {
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
