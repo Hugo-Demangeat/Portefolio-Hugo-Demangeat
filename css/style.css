@@ -47,14 +47,14 @@ body {
   font-family: 'JetBrains Mono', monospace;
   color: var(--text);
   background: linear-gradient(135deg, 
-    #0a0f1f,  /* bleu très sombre - profondeur */
-    #101f3c,  /* bleu foncé subtil */
-    #1a2a47,  /* bleu nuit */
-    #0f2233,  /* bleu intermédiaire */
-    #002d40,  /* bleu-vert très discret */
-    #1b1b3c,  /* violet très sombre */
-    #003366,  /* bleu électrique */
-    #0a0f1f   /* retour bleu très sombre pour boucle douce */
+    #030712,  /* bleu très sombre - presque noir */
+    #0a0f1f,  /* bleu nuit profond */
+    #0f1429,  /* bleu très sombre */
+    #0a0e27,  /* bleu foncé subtil */
+    #050814,  /* noir bleuté */
+    #0a0f1f,  /* bleu nuit */
+    #030712,  /* retour bleu très sombre pour boucle douce */
+    #0f1429   /* bleu très sombre */
 );
   min-height: 100vh;
   line-height: 1.6;
@@ -1127,6 +1127,7 @@ a:focus {
   justify-content: center;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 
 .cert-image-wrapper img {
@@ -1147,7 +1148,7 @@ a:focus {
 }
 
 .cert-info h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 1.5rem 0 0.5rem 0;
   font-size: 1.1rem;
   color: var(--text);
 }
@@ -1282,6 +1283,133 @@ a:focus {
   font-size: 0.85rem;
 }
 
+/* NOUVEAUX STYLES POUR LES ORGANISMES DE CERTIFICATION */
+.cert-organisme {
+  margin-bottom: 4rem;
+}
+
+.organisme-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--cyan);
+}
+
+.organisme-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0.8);
+}
+
+.organisme-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+.organisme-link {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.organisme-link:hover {
+  color: var(--cyan);
+}
+
+.organisme-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.cert-card {
+  background: rgba(15, 20, 41, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.15), inset 0 0 1px rgba(0, 212, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.cert-card-large {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+.cert-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.cert-carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cert-card:hover .cert-carousel-controls {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.carousel-arrow {
+  background: rgba(0, 212, 255, 0.8);
+  border: none;
+  color: var(--bg-dark);
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.carousel-arrow:hover {
+  background: var(--cyan);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+}
+
+.cert-image-wrapper {
+  position: relative;
+}
+
+.cert-download {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* TABLEAU DE DONNÉES */
 .tableau-container {
   background: rgba(15, 20, 41, 0.6);
@@ -1289,6 +1417,9 @@ a:focus {
   border-radius: 3px;
   padding: 2rem;
   overflow-x: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%; /* Utiliser toute la largeur disponible */
 }
 
 .tableau-header {
@@ -1320,14 +1451,18 @@ a:focus {
   border: 1px solid var(--border-light);
   border-radius: 3px;
   margin-bottom: 1.5rem;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch; /* Pour iOS */
 }
 
 /* TABLE STYLES */
 .data-table {
   width: 100%;
+  min-width: 1600px; /* Augmenter la largeur minimale pour accommoder les en-têtes avec retours à la ligne */
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Réduire légèrement la taille du texte */
   font-family: 'JetBrains Mono', monospace;
+  table-layout: fixed; /* Pour une meilleure répartition des colonnes */
 }
 
 .data-table thead {
@@ -1339,20 +1474,35 @@ a:focus {
 }
 
 .data-table th {
-  padding: 1rem;
+  padding: 1.2rem 0.4rem; /* Augmenter le padding vertical pour les en-têtes multilignes */
   text-align: left;
   color: var(--cyan);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem; /* Réduire la taille des titres */
+  white-space: nowrap;
+  width: auto; /* Largeur automatique pour les colonnes */
 }
 
+.data-table th:nth-child(1) { width: 25%; } /* Réalisations */
+.data-table th:nth-child(2) { width: 12%; } /* Période */
+.data-table th:nth-child(3), 
+.data-table th:nth-child(4), 
+.data-table th:nth-child(5), 
+.data-table th:nth-child(6), 
+.data-table th:nth-child(7), 
+.data-table th:nth-child(8) { width: 8.5%; } /* Compétences - légèrement plus large pour les en-têtes multilignes */
+
 .data-table td {
-  padding: 1rem;
+  padding: 0.8rem 0.4rem; /* Augmenter légèrement le padding vertical pour les dates multilignes */
   border-bottom: 1px solid var(--border-light);
   color: var(--text-muted);
   transition: all 0.3s ease;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4; /* Améliorer l'espacement des lignes */
 }
 
 .data-table tbody tr:hover {
@@ -1362,6 +1512,36 @@ a:focus {
 .data-table tbody tr:hover td {
   color: var(--text);
   border-bottom-color: var(--cyan);
+}
+
+/* STYLES POUR LES SECTIONS IMPORTANTES */
+.data-table tbody tr.section-header {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border-top: 2px solid var(--cyan);
+  border-bottom: 2px solid var(--violet);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.1);
+}
+
+.data-table tbody tr.section-header td {
+  padding: 1rem 0.4rem; /* Ajuster le padding pour cohérence */
+  color: var(--cyan);
+  font-weight: 700;
+  text-align: center;
+  background: transparent;
+}
+
+.data-table tbody tr.section-header:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+}
+
+.data-table tbody tr.section-header:hover td {
+  color: var(--cyan);
 }
 
 .tableau-info {
@@ -1598,6 +1778,47 @@ a:focus {
     margin-bottom: 0.8rem;
   }
 
+  .cert-organisme {
+    margin-bottom: 3rem;
+  }
+
+  .organisme-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .organisme-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .organisme-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cert-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-outline {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
   .tableau-container {
     padding: 1.5rem;
   }
@@ -1613,13 +1834,24 @@ a:focus {
   }
 
   .data-table {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Réduire encore plus sur mobile */
+    min-width: 1400px; /* Augmenter pour mobile aussi */
   }
 
   .data-table th,
   .data-table td {
-    padding: 0.75rem 0.5rem;
+    padding: 0.6rem 0.3rem; /* Padding encore plus réduit sur mobile */
+    line-height: 1.3; /* Espacement optimisé pour mobile */
   }
+
+  .data-table th:nth-child(1) { width: 28%; } /* Réalisations plus large sur mobile */
+  .data-table th:nth-child(2) { width: 15%; } /* Période */
+  .data-table th:nth-child(3), 
+  .data-table th:nth-child(4), 
+  .data-table th:nth-child(5), 
+  .data-table th:nth-child(6), 
+  .data-table th:nth-child(7), 
+  .data-table th:nth-child(8) { width: 7.5%; } /* Compétences plus petites */
 
   .tableau-info {
     font-size: 0.85rem;
