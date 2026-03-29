@@ -1,0 +1,82 @@
+/*
+Theme Name: lmweb
+Description: Thème enfant lmweb
+Author: lmweb
+Author URI: https://lmweb.fr
+Template: hello-elementor
+Version: 1.0
+*/
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.accordeon_box_shadow details {
+	box-shadow:0px 0px 17px 4px rgba(23.999999999999986, 32.00000000000002, 102, 0.12941176470588237);
+	border-radius:15px;
+}
+
+.menuHeaderGlobal.header_home {
+	background-color: #fff!important;
+}
+
+.menuHeaderGlobal {
+	background-color:#fff; /* Blanc par défaut */
+}
+
+.home .menuHeaderGlobal { 
+	background-color:transparent; /* Transparent sur l'accueil */
+}
+
+.home .menuHeaderGlobal .elementor-nav-menu--main .elementor-nav-menu li a:not(.elementor-sub-item) { 
+	color:#fff!important;
+}
+.home .menuHeaderGlobal .sub-arrow svg, .home .elementor-16 .elementor-element.elementor-element-b771ae5 div.elementor-menu-toggle svg {
+	fill:#fff;
+}
+.home .header_home .elementor-nav-menu--main .elementor-nav-menu li a:not(.elementor-sub-item) { 
+	color: var(--e-global-color-secondary)!important;
+}
+.home .elementor-16 .header_home .elementor-element.elementor-element-b771ae5 div.elementor-menu-toggle svg {
+	fill:var(--e-global-color-secondary);
+}
+
+.texterouge {
+	color:var(--e-global-color-primary);
+}
+
+.promesse h1 span::after {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  background-image: url("https://seeselecomgroup.com/wp-content/uploads/2025/06/5g.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.visuel_interactif ul {
+	padding:15px;
+}
+
+.visuel_interactif .e-hotspot__tooltip a, .tecnical-button {
+	color:var(--e-global-color-primary);
+}
+
+.tecnical-button {
+	display:inline-block;
+	padding-top:10px;
+}
+
+@media screen and (max-width: 767px) {
+	.elementor-124 .elementor-element.elementor-element-e923fa3 {
+		--container-height:230px!important;
+	}
+	.elementor-element.elementor-arrows-position-outside .swiper {
+		width:100%!important;
+	}
+}

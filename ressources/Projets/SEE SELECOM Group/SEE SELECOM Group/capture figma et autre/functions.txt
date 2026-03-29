@@ -1,0 +1,69 @@
+<?php
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+function my_theme_enqueue_styles() {
+ 
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+ 
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+    );
+}
+
+
+/* Autoriser les fichiers SVG et JSON */
+function wpc_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'wpc_mime_types');
+
+function autoriser_televersement_json($mimes) {
+    $mimes['json'] = 'application/json';
+    return $mimes;
+}
+add_filter('upload_mimes', 'autoriser_televersement_json');
+
+
+/* DONNÉES DU CLIENT À MODIFIER */
+$data['proprietaire'] = "SEE Selecom Group";
+$data['numero_siren'] = "400 077 772";
+$data['telephone'] = "+33 4 68 05 34 00";
+$data['email'] = "commercial@selecom.fr";
+$data['linkedin'] = "https://www.linkedin.com/company/service-electronique-engineering/";
+$data['adresse_postale'] = "Avenue du Pla de Dalt, ZA Alfred Sauvy, 66500 Prades - FRANCE";
+$data['horaires_ouverture'] = "Monday to Friday, from 8 AM to 12 PM and from 1 PM to 6 PM.";
+$data['hebergement'] = "o2switch";
+$data['pdf_orchestra'] = "/v2/wp-content/uploads/2026/02/V1.1-I-ORCHESTRA-I-SEPTEMBRE-2025.pdf";
+$data['pandora'] = "/v2/wp-content/uploads/2026/02/010201_DAT_PANDORA_FR.pdf";
+$data['easytrack'] = "/v2/wp-content/uploads/2026/02/010190B_DAT_EASYTRACK_SMART_FR.pdf";
+$data['easyconnect'] = "/v2/wp-content/uploads/2026/02/010189B_EASYCONNECT-URBANLINK_FR.pdf";
+$data['digirep'] = "/v2/wp-content/uploads/2026/02/010003L-DAT_DIGIREP_Multi_FR.pdf";
+$data['pressurizer'] = "/v2/wp-content/uploads/2026/02/010038I_DAT_PRESSU_FR.pdf";
+$data['tetra-repeater'] = "/v2/wp-content/uploads/2026/02/010069I_DAT_TETRAREP_RF_RF-FR.pdf";
+$data['tetra-micro-repeater'] = "/v2/wp-content/uploads/2026/02/010106A_DAT_MicroRep-400_FR.pdf";
+$data['integra-g'] = "/v2/wp-content/uploads/2026/02/010208A_DAT_FH_FR.pdf";
+$data['optirep'] = "/v2/wp-content/uploads/2026/02/010209A_SMART_OPTIREP_RADIO_FR.pdf";
+$data['xtend04'] = "/v2/wp-content/uploads/2026/02/SEE-XTEND4.0-REP136-174-DATASHEET-V1.0.5-en.pdf";
+
+foreach ($data as $key => $value) {
+	$shortcodeFunction = function() use ($value) { return $value; };
+	add_shortcode($key, $shortcodeFunction);
+}
+
+/* URL DU SITE */
+function shortcode_url() {
+	$url = get_bloginfo('url');
+	$site = get_bloginfo('name');
+	return '<a href="'.$url.'" title="'.$site.'">'.$url.'</a>';
+}
+add_shortcode('url', 'shortcode_url');
+
+/* NOM DU SITE */
+function shortcode_sitename() {
+	$sitename = get_bloginfo('name');
+	return $sitename;
+}
+add_shortcode('sitename', 'shortcode_sitename');

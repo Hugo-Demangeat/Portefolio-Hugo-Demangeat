@@ -1,0 +1,26 @@
+Pexel : https://www.pexels.com/fr-FR/license/
+
+Pixabay : https://pixabay.com/fr/service/license-summary/
+
+CC BY 2.5 : https://creativecommons.org/licenses/by/2.5/deed.fr
+
+CC BY-SA 3.0 : https://creativecommons.org/licenses/by-sa/3.0/deed.fr
+
+CC BY-SA 4.0 :https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+
+GFDL 1.2 : https://www.gnu.org/licenses/old-licenses/fdl-1.2.html
+
+Concrètement, tu dois au minimum pour GFDL 1.2 :
+    1. Citer l’auteur
+    2. Indiquer clairement que l’image est sous licence GFDL
+    3. Fournir le texte complet de la licence GFDL ou un lien visible vers celle-ci
+    4. Autoriser la redistribution et la modification de l’image par les visiteurs, sous la même licence
+    5. Respecter les sections invariantes s’il y en a (rare pour les images, mais possible)
+En pratique, sur un site web, cela ressemble à :
+    • Auteur mentionné
+    • Licence mentionnée (GFDL 1.2 ou ultérieure)
+    • Lien vers le texte intégral de la licence
+    • Mention que l’image peut être réutilisée sous les mêmes conditions
+? Important :
+La GFDL est mal adaptée aux photos sur des sites commerciaux ou vitrines, car elle impose de redistribuer la licence complète et d’autoriser la réutilisation de l’image par tout le monde.
+

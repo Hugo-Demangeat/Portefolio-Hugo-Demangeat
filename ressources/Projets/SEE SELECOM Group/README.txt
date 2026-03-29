@@ -1,0 +1,2 @@
+SEE SELECOM Group et un site web réalisé pour l'entreprise du meme nom faisant du réseau et télécomunication Hardware et Software en france et a l'internationnal, j'ai réalisé se site pour mon stage au sein de l'entreprise LMWEB.
+https://seeselecomgroup.com/ (pas encore en public)
