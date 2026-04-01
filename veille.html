@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veille technologique - Portfolio BTS SIO</title>
   <link rel="stylesheet" href="css/style.css?v=2026-04-01" />
+  <link rel="stylesheet" href="css/veille-modern.css?v=2026-04-01" />
 </head>
 <body>
   <header class="site-header">
@@ -26,35 +27,146 @@
   <main class="container">
     <section class="section">
       <h1 class="typewriter fade-in-up">Veille technologique</h1>
-      <p class="reveal" style="margin-bottom: 1.2rem;">Je suis activement mes sources de veille pour rester à jour en développement, sécurité et mobilité numérique. Mes principaux outils sont Feedly pour l'agrégation RSS et Syft pour l'analyse de composition logicielle.</p>
+      <p class="reveal">Passionné de technologie et de nouveauté, je reste constamment informé.</p>
 
-      <div class="info-card reveal">
-        <h3>Outils de veille</h3>
-        <ul>
-          <li><strong>Feedly</strong> : agrégateur de flux RSS, permet de centraliser des articles, des publications et des alertes sur des sujets tech ciblés.</li>
-          <li><strong>Syft</strong> : scanner de composition de projet (SBOM), détecte les dépendances, vulnérabilités et licences utilisées dans un logiciel.</li>
-        </ul>
+      <div style="margin-top: 3rem;"></div>
+
+      <h2>Mes outils d'information</h2>
+
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div class="info-card reveal tool-card" style="flex: 1; min-width: 250px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+          <img src="ressources/Logos/logo-feedly" alt="Feedly Logo" style="width: 80px; height: auto; margin-bottom: 15px;">
+          <p>Feedly centralise les flux RSS. Il rassemble articles et alertes sur la tech.</p>
+          <a href="https://feedly.com" target="_blank" class="btn">Visiter Feedly</a>
+        </div>
+        <div class="info-card reveal tool-card" style="flex: 1; min-width: 250px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+          <img src="ressources/Logos/Syft-logo" alt="Syft Logo" style="width: 80px; height: auto; margin-bottom: 15px;">
+          <p>Syft analyse les tendances. Il offre des mises à jour intelligentes sur la technologie.</p>
+          <a href="https://play.google.com/store/apps/details?id=ai.orionarm.syft.droid&hl=fr" target="_blank" class="btn">Visiter Syft</a>
+        </div>
       </div>
 
-      <div class="info-card reveal">
-        <h3>De l'achat de matériel à la licence verrouillée</h3>
-        <p>Situations clés :</p>
-        <ul>
-          <li>Console Nintendo Switch : achat matériel, mais ban possible sur actions non conformes (modding, piratage, etc.).</li>
-          <li>Voitures récentes (ex : Tesla, Mercedes MBUX) : options déjà présentes, mais activation payante par abonnement. Impossible de contourner légalement le firmware propriétaire.</li>
-          <li>Jeux numériques : même achetés, certaines versions disparaissent si l'éditeur ferme les serveurs (DLC/online), rendant le contenu inaccessible.</li>
-        </ul>
-        <p>Conclusion : en 2026, on paye de plus en plus des services et des droits d'usage, pas seulement un produit physique. Cette dépendance alimente ma veille en éthique numérique, concurrence, DRM et usages durables.</p>
-      </div>
+      <div style="margin-top: 4rem;"></div>
 
-      <div class="info-card reveal">
-        <h3>Sujets de recherche</h3>
-        <ol>
-          <li>DRM et propriété numérique</li>
-          <li>SBOM et conformité des licences open source</li>
-          <li>Boutonne de coupure (right-to-repair) et contre-marques dans l'industrie auto/console</li>
-        </ol>
-      </div>
+      <section class="veille-modern">
+        <div class="veille-header">
+          <h2 class="gradient-title">Propriété numérique : la fin de la possession ?</h2>
+          <p class="veille-intro">Aujourd'hui, acheter un produit numérique, c'est surtout acheter un droit d'usage. Licences, abonnements, restrictions : la notion de propriété change. Voici l'essentiel à retenir.</p>
+        </div>
+
+        <div class="veille-cards">
+          <div class="veille-card slide-in-left">
+            <div class="veille-card-logo">
+              <img src="ressources/Logos/Switch.png" alt="Nintendo Switch" />
+            </div>
+            <div class="veille-card-content">
+              <span class="status-badge" style="margin-bottom: 1.1rem;">Console & DRM</span>
+              <h3>Propriété sous contrôle</h3>
+              <p>La Nintendo Switch illustre la nouvelle donne : modding ou piratage = sanctions immédiates.<br><br>Même achetée, la console reste sous la coupe du constructeur (DRM, blocages à distance).</p>
+              <div class="veille-links">
+                <a href="https://www.bfmtv.com/tech/gaming/pour-lutter-contre-le-piratage-et-le-jailbreak-nintendo-s-est-octroye-le-droit-de-bricker-les-switch-2-a-distance-en-cas-de-non-respect-de-ses-conditions-d-utilisation_AV-202512220565.html" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/bfmtv.png" alt="BFMTV" />
+                  <div>
+                    <div class="veille-article-title">Nintendo peut bricker la Switch 2 à distance</div>
+                    <div class="veille-article-source">BFMTV</div>
+                  </div>
+                </a>
+                <a href="https://www.gameblog.fr/jeu-video/ed/news/nintendo-switch-pirate-mise-garde-694667" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/gameblog.png" alt="Gameblog" />
+                  <div>
+                    <div class="veille-article-title">Switch piratée : Nintendo met en garde</div>
+                    <div class="veille-article-source">Gameblog</div>
+                  </div>
+                </a>
+                <a href="https://www.gamekult.com/actualite/finalement-nintendo-ne-peut-pas-bricker-votre-switch-2-en-europe-3050864809.html" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/gamekult.png" alt="Gamekult" />
+                  <div>
+                    <div class="veille-article-title">Nintendo ne peut pas bricker en Europe</div>
+                    <div class="veille-article-source">Gamekult</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="veille-card slide-in-right">
+            <div class="veille-card-logo">
+              <img src="ressources/Logos/voiture.png" alt="Voiture connectée" />
+            </div>
+            <div class="veille-card-content">
+              <span class="status-badge" style="margin-bottom: 1.1rem; background: linear-gradient(90deg, var(--cyan), var(--violet)); color: #fff;">Auto & Abonnement</span>
+              <h3>Options sous abonnement</h3>
+              <p>Sur Tesla, Mercedes ou VW, les options sont déjà dans la voiture, mais il faut payer pour les activer.<br><br>L'achat devient un abonnement, même pour des fonctions déjà présentes.</p>
+              <div class="veille-links">
+                <a href="https://www.frandroid.com/survoltes/voitures-electriques/2840871_la-nouvelle-combine-des-constructeurs-auto-peut-couter-tres-cher-aux-clients-y-compris-sur-les-voitures-doccasion" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/frandroid.png" alt="FrAndroid" />
+                  <div>
+                    <div class="veille-article-title">La combine des constructeurs auto</div>
+                    <div class="veille-article-source">FrAndroid</div>
+                  </div>
+                </a>
+                <a href="https://www.autoplus.fr/environnement/chez-volkswagen-il-faut-maintenant-payer-un-abonnement-pour-debloquer-toute-la-puissance-de-sa-voiture-1394121.html" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/autoplus.png" alt="AutoPlus" />
+                  <div>
+                    <div class="veille-article-title">VW : abonnement pour la puissance</div>
+                    <div class="veille-article-source">AutoPlus</div>
+                  </div>
+                </a>
+                <a href="https://www.automobile-magazine.fr/toute-l-actualite/article/48298-services-connectes-automobiles-la-menace-invisible-qui-plane-sur-nos-voitures-modernes" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/auto.png" alt="Automobile Magazine" />
+                  <div>
+                    <div class="veille-article-title">La menace invisible des services connectés</div>
+                    <div class="veille-article-source">Automobile Magazine</div>
+                  </div>
+                </a>
+                <a href="https://www.reddit.com/r/france/comments/1o6cch9/payer_pour_débloquer_sa_voiture_la_nouvelle/" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/reddit.png" alt="Reddit" />
+                  <div>
+                    <div class="veille-article-title">Débloquer sa voiture : débat</div>
+                    <div class="veille-article-source">Reddit</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="veille-card slide-in-left">
+            <div class="veille-card-logo">
+              <img src="ressources/Logos/jeux.png" alt="Jeux numériques" />
+            </div>
+            <div class="veille-card-content">
+              <span class="status-badge" style="margin-bottom: 1.1rem; background: linear-gradient(90deg, var(--violet), var(--cyan)); color: #fff;">Jeux & Licences</span>
+              <h3>Tout est licence</h3>
+              <p>Sur Steam ou PlayStation Store, acheter un jeu = acheter une licence.<br><br>Si l'éditeur ferme les serveurs, le jeu peut disparaître. L'accès dépend du bon vouloir des plateformes.</p>
+              <div class="veille-links">
+                <a href="https://citizens-initiative.europa.eu/initiatives/details/2024/000007_fr" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/eu.png" alt="Initiative Citoyenne" />
+                  <div>
+                    <div class="veille-article-title">Initiative européenne sur la propriété numérique</div>
+                    <div class="veille-article-source">EU</div>
+                  </div>
+                </a>
+                <a href="https://www.jeuxvideo.com/news/1929844/vous-n-etes-pas-proprietaires-de-vos-jeux-video-numeriques-cette-nouvelle-loi-va-forcer-les-geants-du-jeu-video-a-dire-la-verite-aux-joueurs.htm" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/jeuxvideo.png" alt="JeuxVideo.com" />
+                  <div>
+                    <div class="veille-article-title">Loi sur la propriété des jeux numériques</div>
+                    <div class="veille-article-source">JeuxVideo.com</div>
+                  </div>
+                </a>
+                <a href="https://www.bfmtv.com/tech/gaming/les-jeux-video-que-vous-achetez-ne-vous-appartiennent-pas-y-compris-sur-steam_AV-202410110620.html" target="_blank" class="veille-article-preview">
+                  <img src="ressources/Logos/bfmtv.png" alt="BFMTV" />
+                  <div>
+                    <div class="veille-article-title">Les jeux ne vous appartiennent pas</div>
+                    <div class="veille-article-source">BFMTV</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="veille-synthese fade-in-up">
+          <p><strong>En résumé :</strong> DRM, abonnements, firmware propriétaire… La propriété numérique s’efface au profit de l’accès temporaire. En 2026, on achète surtout un droit d’usage, pas un objet. Ce sujet nourrit ma veille sur l’éthique, la sécurité, la durabilité et les alternatives open source.</p>
+        </div>
+      </section>
     </section>
   </main>
 

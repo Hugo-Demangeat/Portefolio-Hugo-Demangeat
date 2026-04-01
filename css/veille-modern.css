@@ -1,0 +1,158 @@
+.veille-modern {
+  margin-top: 2rem;
+}
+
+.veille-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.gradient-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  animation: colorShift 8s ease infinite;
+}
+
+.veille-intro {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.veille-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.veille-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(15, 20, 41, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  gap: 2.2rem;
+  box-shadow: 0 4px 24px rgba(0, 212, 255, 0.07);
+  transition: box-shadow 0.3s, transform 0.3s;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+}
+.veille-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.18), 0 0 0 2px var(--cyan);
+  transform: translateY(-4px) scale(1.01);
+}
+.veille-card-logo {
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 10px;
+  background: rgba(0, 212, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  font-size: 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.08);
+  animation: glowPulse 2.5s infinite;
+}
+.veille-card-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
+.veille-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.veille-card-content h3 {
+  margin: 0 0 0.7rem 0;
+  font-size: 1.3rem;
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.veille-card-content p {
+  margin: 0 0 1.2rem 0;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+.veille-links {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.veille-article-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(0, 212, 255, 0.07);
+  border-radius: 7px;
+  padding: 0.7rem 1.1rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  min-width: 180px;
+  max-width: 320px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.04);
+  position: relative;
+}
+.veille-article-preview:hover {
+  background: rgba(0, 212, 255, 0.13);
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.13);
+}
+.veille-article-preview img {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.veille-article-title {
+  font-size: 1.01rem;
+  color: var(--cyan);
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+  text-decoration: underline dotted 1.5px var(--cyan);
+}
+.veille-article-source {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.veille-synthese {
+  margin-top: 2.5rem;
+  background: rgba(0, 212, 255, 0.07);
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text);
+  box-shadow: 0 2px 12px rgba(0, 212, 255, 0.08);
+  animation: fadeInUp 1.2s;
+}
+
+@media (max-width: 900px) {
+  .veille-cards { flex-direction: column; }
+  .veille-card { flex-direction: column; align-items: stretch; }
+  .veille-card-logo { margin-bottom: 1.2rem; margin-right: 0; }
+}
