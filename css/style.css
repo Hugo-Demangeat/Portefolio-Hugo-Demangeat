@@ -2232,6 +2232,10 @@ a:focus {
 }
 
 /* TIMELINE ANIMATIONS */
+.timeline-container {
+  position: relative;
+}
+
 .timeline-container::before {
   content: '';
   position: absolute;
@@ -2288,7 +2292,7 @@ a:focus {
 }
 
 .timeline-item-2 .timeline-marker {
-  left: calc(50% - 1.5rem);
+  left:calc(-5% - 1.5rem);
   right: auto;
   border-color: var(--violet);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
