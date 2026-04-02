@@ -867,6 +867,9 @@ a:focus {
   border-radius: 3px;
   padding: 2rem;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
 }
 
 .contact-card h3 {
@@ -881,6 +884,19 @@ a:focus {
 
 .contact-card a {
   word-break: break-all;
+}
+
+.contact-icon {
+  max-width: 60px;
+  max-height: 60px;
+  margin: 0 auto 1rem;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  filter: brightness(1.2) contrast(1.2);
 }
 
 /* CERTIFICATIONS PAGE */

@@ -1,2 +1,2 @@
-SEE SELECOM Group et un site web réalisé pour l'entreprise du meme nom faisant du réseau et télécomunication Hardware et Software en france et a l'internationnal, j'ai réalisé se site pour mon stage au sein de l'entreprise LMWEB.
+SEE SELECOM Group et un site web réalisé pour l'entreprise du meme nom faisant du réseau et télécomunication Hardware et Software en france et a l'internationnal, j'ai réalisé se site pour mon stage au sein de l'entreprise LMWEB.   j'ai créer des page , pour d'autres une designer avais fait des models figma. créer en collaboration avec mes collégue.
 https://seeselecomgroup.com/ (pas encore en public)
