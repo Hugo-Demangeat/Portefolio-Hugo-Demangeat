@@ -202,6 +202,120 @@ body {
   outline-offset: 4px;
 }
 
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--text);
+  position: absolute;
+  left: 9px;
+  transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle .hamburger {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle .hamburger::before {
+  top: -8px;
+}
+
+.nav-toggle .hamburger::after {
+  top: 8px;
+}
+
+.nav-toggle.open .hamburger {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.nav-toggle.open .hamburger::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.nav-toggle.open .hamburger::after {
+  top: 0;
+  opacity: 0;
+}
+
+@media (max-width: 880px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    right: 0;
+    left: 0;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    background: rgba(5, 8, 20, 0.95);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.33s ease, padding 0.33s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .nav-links.open {
+    max-height: 320px;
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .nav-links a {
+    width: 100%;
+    color: var(--text);
+    padding: 0.75rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(0, 212, 255, 0.12);
+    color: var(--cyan);
+  }
+
+  .nav-links a::before {
+    display: none;
+  }
+
+  .site-header {
+    padding: 0.65rem 0;
+    background: rgba(5, 8, 20, 0.95);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.25);
+  }
+}
+
 /* MAIN CONTENT - SEAMLESS */
 .container {
   max-width: 1400px;
