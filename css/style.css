@@ -3660,3 +3660,47 @@ a:focus {
   font-size: 1.1rem;
   color: var(--text);
 }
+
+/* PROJECT CAPTURES AND RESOURCES */
+.project-captures, .project-resources {
+  margin-top: 2rem;
+}
+
+.project-captures h3, .project-resources h3 {
+  color: var(--cyan);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.project-captures .gallery-grid {
+  margin-bottom: 1.5rem;
+}
+
+.show-more-btn {
+  margin: 1rem auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.hidden-captures {
+  margin-top: 1rem;
+}
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.resource-links .btn {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+}
