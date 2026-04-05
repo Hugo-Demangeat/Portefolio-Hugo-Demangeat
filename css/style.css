@@ -1085,7 +1085,8 @@ a:focus {
 }
 
 /* FILTER SYSTEM */
-.projects-filter {
+.projects-filter,
+.cert-filter {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
@@ -1124,7 +1125,8 @@ a:focus {
   transition: all 0.3s ease;
 }
 
-.project-card.hidden {
+.project-card.hidden,
+.cert-organisme.hidden {
   display: none;
 }
 
