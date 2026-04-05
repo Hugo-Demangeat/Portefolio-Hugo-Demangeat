@@ -2074,6 +2074,11 @@ a:focus {
   user-select: none;
 }
 
+.lightbox-prev,
+.lightbox-next {
+  display: none;
+}
+
 .lightbox-close {
   top: 20px;
   right: 40px;
