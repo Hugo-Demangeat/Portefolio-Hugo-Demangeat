@@ -1,9 +1,9 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
 
 :root {
-  --bg-dark: #0a0e27;
-  --bg-darker: #050814;
-  --bg-card: #0f1429;
+  --bg-dark: #0f1530;
+  --bg-darker: #080a12;
+  --bg-card: #0d151f;
   
   --cyan: #00d4ff;          /* accent principal */
   --cyan-muted: #0099cc;
@@ -47,15 +47,10 @@ body {
   font-family: 'JetBrains Mono', monospace;
   color: var(--text);
   background: linear-gradient(135deg, 
-    #030712,  /* bleu très sombre - presque noir */
-    #0a0f1f,  /* bleu nuit profond */
-    #0f1429,  /* bleu très sombre */
-    #0a0e27,  /* bleu foncé subtil */
-    #050814,  /* noir bleuté */
-    #0a0f1f,  /* bleu nuit */
-    #030712,  /* retour bleu très sombre pour boucle douce */
-    #0f1429   /* bleu très sombre */
-);
+    #050810 0%,
+    #0a0d18 50%,
+    #050810 100%
+  );
   min-height: 100vh;
   line-height: 1.6;
   letter-spacing: 0.5px;
