@@ -725,37 +725,56 @@ a:focus {
 
 /* CODE CONSOLE */
 .code-console {
-  background: rgba(10, 14, 39, 0.8);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: 4px;
-  padding: 1.5rem;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  color: var(--cyan);
-  overflow-x: auto;
+  background: linear-gradient(180deg, rgba(4, 12, 31, 0.98), rgba(7, 19, 55, 0.95));
+  border: 1px solid rgba(0, 212, 255, 0.16);
+  border-radius: 12px;
+  padding: 1.7rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #00d9ff;
+  overflow: hidden;
+  height: 450px;
   margin: 0;
   position: relative;
-  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25), inset 0 0 24px rgba(0, 212, 255, 0.08);
   transition: all 0.3s ease;
 }
 
 .code-console::before {
-  content: '● ● ●';
+  content: '●  ●  ●';
   position: absolute;
-  top: 0.5rem;
+  top: 0.75rem;
   left: 1rem;
-  color: var(--text-muted);
-  font-size: 0.6rem;
-  letter-spacing: 0.3rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.65rem;
+  letter-spacing: 0.28rem;
+}
+
+.code-console::after {
+  content: 'IDE';
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
 }
 
 .code-console:hover {
-  border-color: rgba(0, 212, 255, 0.4);
-  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.08), 0 6px 16px rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.30), inset 0 0 28px rgba(0, 212, 255, 0.12);
 }
 
 .code-console code {
-  color: var(--cyan);
+  color: #00d9ff;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-console code::selection {
+  background: rgba(0, 212, 255, 0.18);
 }
 
 
