@@ -1084,6 +1084,125 @@ a:focus {
   padding: 1.1rem;
 }
 
+/* FILTER SYSTEM */
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 2rem 0 3rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.7rem 1.5rem;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.filter-btn:hover {
+  border-color: rgba(0, 212, 255, 0.6);
+  color: var(--cyan);
+}
+
+.filter-btn.active {
+  background: var(--cyan);
+  color: #010304;
+  border-color: var(--cyan);
+  font-weight: 600;
+}
+
+/* PROJECT CARD IMPROVEMENTS */
+.project-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: var(--violet);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.project-image {
+  position: relative;
+}
+
+.project-category {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0, 212, 255, 0.18);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  color: var(--cyan);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  z-index: 5;
+}
+
+.project-badges {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.badge-type {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  color: var(--cyan);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #d8b4fe;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 @media (max-width: 1200px) {
   .projects-2x2-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1108,6 +1227,31 @@ a:focus {
     height: 80px;
   }
 
+  .projects-filter {
+    gap: 0.6rem;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .project-status {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .badge-type {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .tech-tag {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
   .cert-skills .skill-tag {
     font-size: 0.68rem;
     padding: 0.2rem 0.55rem;
@@ -1125,6 +1269,31 @@ a:focus {
 
   .project-gallery img {
     height: 70px;
+  }
+
+  .projects-filter {
+    gap: 0.5rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .project-status {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .badge-type {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .tech-tag {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
   }
 
   .cert-skills .skill-tag {
@@ -1157,6 +1326,19 @@ a:focus {
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
   line-height: 1.4;
+}
+
+.project-status-detail {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  color: var(--cyan);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .project-details strong {

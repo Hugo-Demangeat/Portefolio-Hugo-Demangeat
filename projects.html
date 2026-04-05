@@ -50,25 +50,38 @@
         </div>
       </div>
 
+      <!-- FILTER SYSTEM -->
+      <div class="projects-filter reveal">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+      </div>
+
       <!-- PROJETS -->
       <div class="projects-grid">
         
         <!-- CastleFight -->
-        <div class="project-card">
+        <div class="project-card" data-type="java">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/Castlefight/pokefight.png" alt="CastleFight Game" loading="lazy">
+            <div class="project-category">Java</div>
           </div>
           <div class="project-content">
             <h3>CastleFight Arena</h3>
-            <p>Jeu de combat en tour par tour développé en Java/JavaFX avec interface graphique moderne et sauvegarde des scores.</p>
+            <p>Jeu de combat en tour par tour avec interface graphique moderne, animations et sauvegarde des scores en base de données.</p>
             <a href="project-castlefight.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- MesFilmsPreferes -->
-        <div class="project-card">
+        <div class="project-card" data-type="web">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/MesFilmPrefere/Recherche.png" alt="Mes Films Préférés" loading="lazy">
+            <div class="project-category">Web</div>
           </div>
           <div class="project-content">
             <h3>Mes Films Préférés</h3>
@@ -78,73 +91,85 @@
         </div>
 
         <!-- EventHub Lurcat -->
-        <div class="project-card">
+        <div class="project-card" data-type="web">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/EventHub-Lurcat/Capture Acceuil.png" alt="EventHub Application" loading="lazy">
+            <div class="project-category">Web</div>
           </div>
           <div class="project-content">
             <h3>EventHub Lurcat</h3>
-            <p>Application full-stack de gestion d'événements scolaires avec authentification, autorisations et architecture MVC.</p>
+            <p>Application full-stack de gestion d'événements scolaires avec authentification, autorisations avancées et architecture MVC.</p>
             <a href="project-eventhub.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- Go FoodTruck Manager -->
-        <div class="project-card">
+        <div class="project-card" data-type="mobile">
+          <div class="project-status">En cours</div>
           <div class="project-image">
             <img src="ressources/Projets/Go FoodTruckManager/Acceuil_GO FoodTruckManager.jpg" alt="Go FoodTruck Manager" loading="lazy">
+            <div class="project-category">Mobile</div>
           </div>
           <div class="project-content">
             <h3>Go FoodTruck Manager</h3>
-            <p>Application mobile de gestion des commandes pour food truck développée avec WinDev et synchronisation des données.</p>
+            <p>Application mobile de gestion des commandes pour food truck avec WinDev et synchronisation des données en temps réel.</p>
             <a href="project-foodtruck.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- Module Dolibarr -->
-        <div class="project-card">
+        <div class="project-card" data-type="web">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/DoliGestion/Rapport Stage ILS/Capture/Capture Module/Client.png" alt="Module Dolibarr" loading="lazy">
+            <div class="project-category">Web</div>
           </div>
           <div class="project-content">
             <h3>Module Gestion Clients Dolibarr</h3>
-            <p>Développement d'un module personnalisé pour Dolibarr (ERP open-source) avec gestion avancée des informations clients.</p>
+            <p>Développement d'un module personnalisé pour Dolibarr (ERP) avec gestion avancée des informations clients et base de données.</p>
             <a href="project-dolibarr.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- Script API OVH -->
-        <div class="project-card">
+        <div class="project-card" data-type="python">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/Script API OVH/menu.JPG" alt="Script API OVH" loading="lazy">
+            <div class="project-category">Python</div>
           </div>
           <div class="project-content">
             <h3>Script Automatisation Achat Domaine OVH</h3>
-            <p>Script Python pour automatiser l'achat et la configuration de noms de domaine via l'API OVH avec interface CLI.</p>
+            <p>Script Python pour automatiser l'achat et la configuration de noms de domaine via l'API OVH avec interface CLI interactive.</p>
             <a href="project-ovh.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- Site Perpignan Transfert -->
-        <div class="project-card">
+        <div class="project-card" data-type="web">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/Perpignan Transfert/Perpignan Transfert/capture perpignan transfert/Home.png" alt="Site Perpignan Transfert" loading="lazy">
+            <div class="project-category">Web</div>
           </div>
           <div class="project-content">
             <h3>Site Web Perpignan Transfert</h3>
-            <p>Site web vitrine responsive multilingue pour entreprise de transport VTC avec optimisation SEO et référencement local.</p>
+            <p>Site web vitrine responsive multilingue pour entreprise de transport VTC avec optimisation SEO locale et boutique en ligne.</p>
             <a href="project-perpignan.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
 
         <!-- Site SEE SELECOM Group -->
-        <div class="project-card">
+        <div class="project-card" data-type="web">
+          <div class="project-status">Terminé</div>
           <div class="project-image">
             <img src="ressources/Projets/SEE SELECOM Group/SEE SELECOM Group/capture seeselecom/Accueil.png" alt="Site SEE SELECOM Group" loading="lazy">
+            <div class="project-category">Web</div>
           </div>
           <div class="project-content">
             <h3>Site Web SEE SELECOM Group</h3>
-            <p>Site web vitrine responsive multilingue pour entreprise de télécommunications avec optimisation SEO internationale.</p>
+            <p>Site web vitrine responsive multilingue pour entreprise de télécommunications avec optimisation SEO internationale et contact.</p>
             <a href="project-seeselecom.html" class="btn btn-outline">Voir le projet →</a>
           </div>
         </div>
